@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spisok</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      padding: 20px;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button.delete-button {
+      background-color: #f44336; /* Red color for delete button */
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    button.delete-button:hover {
+      background-color: #e31b0c; /* Darker red on hover */
+    }
+    .button-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+<h1>Список пользователей</h1>
+<table border="1">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Имя</th>
+    <th>Фамилия</th>
+    <th>Email</th>
+    <th>Действия</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="user : ${users}">
+    <td th:text="${user.id}">1</td>
+    <td th:text="${user.firstName}">Имя</td>
+    <td th:text="${user.lastName}">Фамилия</td>
+    <td th:text="${user.email}">email@example.com</td>
+    <td>
+      <a th:href="@{/updateUser(userId=${user.id})}">Изменить</a>
+      <form th:action="@{/deleteUser(userId=${user.id})}" method="post" style="display:inline;">
+        <button type="submit">Удалить</button>
+      </form>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<br>
+<button onclick="window.location.href ='addUser'">Добавить нового пользователя</button>
+</body>
+</html>

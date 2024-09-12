@@ -1,8 +1,8 @@
 package com.test_3_1_1.Spring_boot.model;
 
 import jakarta.persistence.*;
-import java.util.Objects;
 
+import java.util.Objects;
 
 @Entity
 @Table(name = "users")

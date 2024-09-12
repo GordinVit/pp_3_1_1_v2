@@ -1,7 +1,7 @@
 package com.test_3_1_1.Spring_boot.controller;
 
 import com.test_3_1_1.Spring_boot.model.User;
-import com.test_3_1_1.Spring_boot.service.UserService;
+import com.test_3_1_1.Spring_boot.service.UserServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,9 +13,9 @@ import java.util.List;
 
 @Controller
 public class UserController {
-    private final UserService userService;
+    private final UserServiceImpl userService;
 
-    public UserController(UserService userService) {
+    public UserController(UserServiceImpl userService) {
         this.userService = userService;
     }
 
