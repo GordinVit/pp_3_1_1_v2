@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Created-By: IntelliJ IDEA
-Built-By: SexyVitalaLove
-Build-Jdk: Oracle OpenJDK version 21.0.2
-Implementation-Title: Spring_boot
-Implementation-Version: 0.0.1-SNAPSHOT
-Implementation-Vendor-Id: com.test_3_1_1
-Main-Class: ${start-class}
-
